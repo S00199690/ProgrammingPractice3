@@ -23,11 +23,18 @@ namespace Songs
             playlist.Add(s4);
             playlist.Add(s5);
 
-            foreach(Song song in playlist)
-            {
-                Console.WriteLine(song);
-            }
+            Display(playlist);
 
+        }
+
+        private static void Display(List<Song> playlist)
+        {
+            Console.WriteLine("{0, -20}{1, -25}{2, -10}{3, -10}", "Artist", "Song", "Duration", "Genre");
+
+            foreach (Song song in playlist)
+            {
+                Console.WriteLine($"{song.Artist, -20}{song.Title, -25}{song.Duration, -10}{song.MusicGenre, -10}");
+            }
         }
     }
 }
